@@ -3,10 +3,15 @@ from pygame.locals import *
 from random import randint
 from copy import copy
 
-cells = [[int(randint(0,100) < 50) for __ in range(200)] for _ in range(200)]
+width = height = 80
+screen_w = screen_h = 800
+block_size_w = int(screen_w / width)
+block_size_h = int(screen_h / height)
+
+cells = [[int(randint(0,100) < 50) for __ in range(width)] for _ in range(height)]
 
 pygame.init()
-screen = pygame.display.set_mode((800,800))
+screen = pygame.display.set_mode((screen_w,screen_h))
 
 def main(screen, cells):
     done = False
@@ -80,7 +85,10 @@ def main(screen, cells):
             for cell in col:
                 pygame.draw.rect(screen,
                                  0xFFFFFF if cell else 0x000000,
-                                 pygame.Rect((x * 4, y * 4), (4, 4)))
+                                 pygame.Rect((x * block_size_w,
+                                              y * block_size_h),
+                                             (block_size_w,
+                                              block_size_h)))
                 x += 1
             x = 0
             y += 1
