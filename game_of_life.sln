@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "life_game", "life_game\life_game.pyproj", "{7CAFCCEA-05AB-4478-9ADF-05BBD0002AEA}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "game_of_life", "game_of_life\game_of_life.pyproj", "{CEB7E1F6-BF13-42F0-8B01-57C89BE3342E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,8 +11,8 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7CAFCCEA-05AB-4478-9ADF-05BBD0002AEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CAFCCEA-05AB-4478-9ADF-05BBD0002AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB7E1F6-BF13-42F0-8B01-57C89BE3342E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB7E1F6-BF13-42F0-8B01-57C89BE3342E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
