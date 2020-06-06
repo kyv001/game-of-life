@@ -33,38 +33,22 @@ def main(screen, cells):
             |-1 +1|0  +1|+1 +1|
              ----------------- 
             '''
-            try:
-                if cells[cursor[0] - 1][cursor[1] - 1]:
-                    n_cells_around += 1
-            except IndexError:...
-            try:
-                if cells[cursor[0]][cursor[1] - 1]:
-                    n_cells_around += 1
-            except IndexError:...
-            try:
-                if cells[cursor[0] + 1][cursor[1] - 1]:
-                    n_cells_around += 1
-            except IndexError:...
-            try:
-                if cells[cursor[0] - 1][cursor[1]]:
-                    n_cells_around += 1
-            except IndexError:...
-            try:
-                if cells[cursor[0] + 1][cursor[1]]:
-                    n_cells_around += 1
-            except IndexError:...
-            try:
-                if cells[cursor[0] - 1][cursor[1] + 1]:
-                    n_cells_around += 1
-            except IndexError:...
-            try:
-                if cells[cursor[0]][cursor[1] + 1]:
-                    n_cells_around += 1
-            except IndexError:...
-            try:
-                if cells[cursor[0] + 1][cursor[1] + 1]:
-                    n_cells_around += 1
-            except IndexError:...
+            if cells[(cursor[0] - 1) % height][(cursor[1] - 1) % width]:
+                n_cells_around += 1
+            if cells[cursor[0] % height][(cursor[1] - 1) % width]:
+                n_cells_around += 1
+            if cells[(cursor[0] + 1) % height][(cursor[1] - 1) % width]:
+                n_cells_around += 1
+            if cells[(cursor[0] - 1) % height][cursor[1] % width]:
+                n_cells_around += 1
+            if cells[(cursor[0] + 1) % height][cursor[1] % width]:
+                n_cells_around += 1
+            if cells[(cursor[0] - 1) % height][(cursor[1] + 1) % width]:
+                n_cells_around += 1
+            if cells[cursor[0] % height][(cursor[1] + 1) % width]:
+                n_cells_around += 1
+            if cells[(cursor[0] + 1) % height][(cursor[1] + 1) % width]:
+                n_cells_around += 1
 
             if n_cells_around == 3:
                 tmp_cells[cursor[0]][cursor[1]] = 1
