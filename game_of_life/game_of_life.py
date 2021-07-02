@@ -8,10 +8,11 @@ screen_w = screen_h = 800
 block_size_w = int(screen_w / width)
 block_size_h = int(screen_h / height)
 
-cells = [[int(randint(0,100) < 50) for __ in range(width)] for _ in range(height)]
+cells = [[int(randint(0,100) < 60) for __ in range(width)] for _ in range(height)]
 
 pygame.init()
 screen = pygame.display.set_mode((screen_w,screen_h))
+clock = pygame.time.Clock()
 
 def main(screen, cells):
     done = False
@@ -24,15 +25,6 @@ def main(screen, cells):
         tmp_cells = [[cells[i][j] for j in range(len(cells[i]))] for i in range(len(cells))]
         while not cursor == [len(cells) - 1, len(cells[0]) - 1]:
             n_cells_around = 0
-            '''
-             _________________
-            |-1 -1|0  -1|+1 -1|
-            |-----|-----|-----|
-            |-1  0|0   0|+1  0|
-            |-----|-----|-----|
-            |-1 +1|0  +1|+1 +1|
-             ----------------- 
-            '''
             if cells[(cursor[0] - 1) % height][(cursor[1] - 1) % width]:
                 n_cells_around += 1
             if cells[cursor[0] % height][(cursor[1] - 1) % width]:
@@ -76,8 +68,9 @@ def main(screen, cells):
                 x += 1
             x = 0
             y += 1
-
+            
         pygame.display.update()
+        clock.tick(20)
 
 if __name__ == '__main__':
     main(screen, cells)
